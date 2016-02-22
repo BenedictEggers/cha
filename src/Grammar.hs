@@ -227,7 +227,10 @@ data LogAndExpr
     deriving (Show, Eq)
 
 data InclusiveOrExpr 
-    = InclusionTODO
+    = IOEExclusiveOrExpr
+        ExclusiveOrExpr
+    | IOEInclusiveOrExprExclusiveOrExpr
+        InclusiveOrExpr ExclusiveOrExpr
     deriving (Show, Eq)
 
 data ExclusiveOrExpr 
