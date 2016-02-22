@@ -96,7 +96,8 @@ data TypeSpec
     deriving (Show, Eq)
 
 data StructOrUnionSpec 
-    = SOUSTODO
+    = SOUSStructOrUnionIdentStructDeclList StructOrUnion (Maybe Ident) StructDeclList
+    | SOUSStructOrUnionIdent StructOrUnion Ident
     deriving (Show, Eq)
 
 data StructOrUnion 
