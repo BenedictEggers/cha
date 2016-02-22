@@ -109,7 +109,8 @@ data StructOrUnion
     deriving (Show, Eq)
 
 data StructDeclList 
-    = SDLTODO
+    = SDLStructDecl StructDecl
+    | SDLStructDeclStructDeclList StructDecl StructDeclList
     deriving (Show, Eq)
 
 data StructDecl 
