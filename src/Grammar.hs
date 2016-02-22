@@ -262,10 +262,12 @@ data EqualityOp  -- Not in the grammar, simplifies EqualityExpr def
 data RelationalExpr 
     = REShiftExpr
         ShiftExpr
-    | RERelationalExprLessThanShiftExpr
-        RelationalExpr ShiftExpr
-    | RERelationalExprGreaterThanShiftExpr
-        RelationalExpr ShiftExpr
+    | RERelationalExprRelationalOpShiftExpr
+        RelationalExpr RelationalOp ShiftExpr
+    deriving (Show, Eq)
+
+data RelationalOp  -- Not in the grammar
+    = TODO
     deriving (Show, Eq)
 
 data ShiftExpr 
