@@ -90,8 +90,10 @@ data TypeSpec
     | Unsigned
     | Bool
     | Complex
+    | TSStructOrUnionSpec StructOrUnionSpec
+    | TSEnumSpec EnumSpec
+    | TSTypedefName TypedefName
     deriving (Show, Eq)
-    -- TODO
 
 data StructOrUnionSpec 
     = SOUSTODO
