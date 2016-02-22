@@ -9,11 +9,9 @@
 - carrier pigeon.
 -
 - beggerss@cs.washington.edu
--}
-
-
-
-{-
+-
+-
+-
 - Here's the type naming scheme:
 -      * Types are given the same names as in the grammars, with some
 -        abbreviations (see below).
