@@ -118,7 +118,8 @@ data StructDecl
     deriving (Show, Eq)
 
 data SpecQualList 
-    = SQLTODO
+    = SQLTypeSpecSpecQualList TypeSpec (Maybe SpecQualList)
+    | SQLTypeQualSpecQualList TypeQual (Maybe SpecQualList)
     deriving (Show, Eq)
 
 data TypeQual 
