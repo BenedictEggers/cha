@@ -114,7 +114,7 @@ data StructDeclList
     deriving (Show, Eq)
 
 data StructDecl 
-    = SDTODO
+    = SDStructDecl SpecQualList StructDeclaratorList
     deriving (Show, Eq)
 
 data SpecQualList 
