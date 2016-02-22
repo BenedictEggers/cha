@@ -134,11 +134,12 @@ data StructDeclaratorList
     deriving (Show, Eq)
 
 data StructDeclarator 
-    = TODOTODO
+    = SDDeclarator Declarator
+    | SDDeclaratorConstExpr (Maybe Declarator) ConstExpr
     deriving (Show, Eq)
 
 data Declarator 
-    = DeclaratorTODO
+    = Declarator (Maybe Pointer) DirectDeclarator
     deriving (Show, Eq)
 
 data Pointer 
