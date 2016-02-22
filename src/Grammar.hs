@@ -274,7 +274,15 @@ data RelationalOp  -- Not in the grammar
     deriving (Show, Eq)
 
 data ShiftExpr 
-    = StickyKeysTODO
+    = SEAdditiveExpr
+        AdditiveExpr
+    | SEShiftExprShiftDirectionAdditiveExpr
+        ShiftExpr ShiftDirection AdditiveExpr
+    deriving (Show, Eq)
+
+data ShiftDirection     -- Not in the grammar
+    = SDRight
+    | SDLeft
     deriving (Show, Eq)
 
 data AdditiveExpr 
