@@ -182,12 +182,12 @@ data DirectDeclarator
         Ident
     | DDDeclarator
         Declarator
-    | DDDirectDeclaratorTypeQualListAssignmentExpr
-        DirectDeclarator (Maybe TypeQualList) (Maybe AssignmentExpr)
-    | DDDirectDeclaratorStaticTypeQualListAssignmentExpr
-        DirectDeclarator (Maybe TypeQualList) AssignmentExpr
-    | DDDirectDeclaratorTypeQualListStaticAssignmentExpr
-        DirectDeclarator TypeQualList AssignmentExpr
+    | DDDirectDeclaratorTypeQualListAssignExpr
+        DirectDeclarator (Maybe TypeQualList) (Maybe AssignExpr)
+    | DDDirectDeclaratorStaticTypeQualListAssignExpr
+        DirectDeclarator (Maybe TypeQualList) AssignExpr
+    | DDDirectDeclaratorTypeQualListStaticAssignExpr
+        DirectDeclarator TypeQualList AssignExpr
     | DDDirectDeclaratorTypeQualList
         DirectDeclarator (Maybe TypeQualList)
     | DDDirectDeclaratorParamTypeList
@@ -196,8 +196,11 @@ data DirectDeclarator
         DirectDeclarator (Maybe IdentList)
     deriving (Show, Eq)
 
-data AssignmentExpr 
-    = AssTODO
+data AssignExpr 
+    = AEConditionalExpr
+        ConditionalExpr
+    | AEUnaryExprAssignOpAssignExpr
+        UnaryExpr AssignOp AssignExpr
     deriving (Show, Eq)
 
 data ConditionalExpr 
