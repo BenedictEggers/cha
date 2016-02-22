@@ -234,7 +234,10 @@ data InclusiveOrExpr
     deriving (Show, Eq)
 
 data ExclusiveOrExpr 
-    = ExclusionTODO
+    = EOEAndExpr
+        AndExpr
+    | EOEExclusiveOrExprEqualityExpr
+        ExclusiveOrExpr EqualityExpr
     deriving (Show, Eq)
 
 data AndExpr 
