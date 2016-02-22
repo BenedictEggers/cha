@@ -129,7 +129,8 @@ data TypeQual
     deriving (Show, Eq)
 
 data StructDeclaratorList 
-    = SDLTODOFUCK
+    = SDLStructDeclarator StructDeclarator
+    | SDLStructDeclaratorStructDeclaratorList StructDeclarator StructDeclaratorList
     deriving (Show, Eq)
 
 data StructDeclarator 
