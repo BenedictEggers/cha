@@ -39,6 +39,8 @@
 -          - Identifier    -> Ident
 -          - Enumerator    -> Enum
 -          - Statement     -> Stmt
+-          - Assignment    -> Assign
+-          - Conditional   -> Cond
 -              
 -}
 
@@ -197,14 +199,17 @@ data DirectDeclarator
     deriving (Show, Eq)
 
 data AssignExpr 
-    = AEConditionalExpr
-        ConditionalExpr
+    = AECondExpr
+        CondExpr
     | AEUnaryExprAssignOpAssignExpr
         UnaryExpr AssignOp AssignExpr
     deriving (Show, Eq)
 
-data ConditionalExpr 
-    = ConditionerTODO
+data CondExpr 
+    = CELogOrExpr
+        LogOrExpr
+    | CELogOrExprExprCondExpr
+        LogOrExpr Expr CondExpr
     deriving (Show, Eq)
 
 data LogOrExpr 
