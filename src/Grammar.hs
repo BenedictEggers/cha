@@ -241,7 +241,10 @@ data ExclusiveOrExpr
     deriving (Show, Eq)
 
 data AndExpr 
-    = AAAAANDTODO
+    = AEEqualityExpr
+        EqualityExpr
+    | AEAndExprEqualityExpr
+        AndExpr EqualityExpr
     deriving (Show, Eq)
 
 data EqualityExpr 
