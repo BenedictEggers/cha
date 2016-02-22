@@ -267,7 +267,10 @@ data RelationalExpr
     deriving (Show, Eq)
 
 data RelationalOp  -- Not in the grammar
-    = TODO
+    = ROLessThan
+    | ROGreaterThan
+    | ROLessEq
+    | ROGreaterEq
     deriving (Show, Eq)
 
 data ShiftExpr 
