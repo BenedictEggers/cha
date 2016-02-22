@@ -148,7 +148,8 @@ data Pointer
     deriving (Show, Eq)
 
 data TypeQualList 
-    = TQLTODO
+    = TQLTypeQual TypeQual
+    | TQLTypeQualTypeQualList TypeQual TypeQualList
     deriving (Show, Eq)
 
 data DirectDeclarator 
