@@ -213,7 +213,10 @@ data CondExpr
     deriving (Show, Eq)
 
 data LogOrExpr 
-    = LogarithmTODO
+    = LOELogAndExpr
+        LogAndExpr
+    | LOELogOrExprLogAndExpr
+        LogOrExpr LogAndExpr
     deriving (Show, Eq)
 
 data LogAndExpr 
