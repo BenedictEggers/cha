@@ -53,24 +53,33 @@ data Ident = String
     deriving (Show, Eq)
 
 data TransUnit
-    = TUExtDecl ExtDecl
-    | TUTransUnitExtDecl TransUnit ExtDecl
+    = TUExtDecl
+        ExtDecl
+    | TUTransUnitExtDecl
+        TransUnit ExtDecl
     deriving (Show, Eq)
 
 data ExtDecl
-    = EDFuncDef FuncDef
-    | EDDecl Decl
+    = EDFuncDef
+        FuncDef
+    | EDDecl
+        Decl
     deriving (Show, Eq)
 
 data FuncDef
-    = FDFuncDef DeclSpecs Declarator (Maybe DeclList) CompoundStmt
+    = FDFuncDef
+        DeclSpecs Declarator (Maybe DeclList) CompoundStmt
     deriving (Show, Eq)
 
 data DeclSpecs
-    = DSStorageClassSpecDeclSpecs StorageClassSpec (Maybe DeclSpecs)
-    | DSTypeSpecifierDeclSpecs TypeSpec (Maybe DeclSpecs)
-    | DSTypeQualDeclSpecs TypeQual (Maybe DeclSpecs)
-    | DSFuncSpecDeclSpecs FuncSpec (Maybe DeclSpecs)
+    = DSStorageClassSpecDeclSpecs
+        StorageClassSpec (Maybe DeclSpecs)
+    | DSTypeSpecifierDeclSpecs
+        TypeSpec (Maybe DeclSpecs)
+    | DSTypeQualDeclSpecs
+        TypeQual (Maybe DeclSpecs)
+    | DSFuncSpecDeclSpecs
+        FuncSpec (Maybe DeclSpecs)
     deriving (Show, Eq)
 
 data StorageClassSpec
@@ -99,8 +108,10 @@ data TypeSpec
     deriving (Show, Eq)
 
 data StructOrUnionSpec 
-    = SOUSStructOrUnionIdentStructDeclList StructOrUnion (Maybe Ident) StructDeclList
-    | SOUSStructOrUnionIdent StructOrUnion Ident
+    = SOUSStructOrUnionIdentStructDeclList
+        StructOrUnion (Maybe Ident) StructDeclList
+    | SOUSStructOrUnionIdent
+        StructOrUnion Ident
     deriving (Show, Eq)
 
 data StructOrUnion 
@@ -109,17 +120,22 @@ data StructOrUnion
     deriving (Show, Eq)
 
 data StructDeclList 
-    = SDLStructDecl StructDecl
-    | SDLStructDeclStructDeclList StructDecl StructDeclList
+    = SDLStructDecl
+        StructDecl
+    | SDLStructDeclStructDeclList
+        StructDecl StructDeclList
     deriving (Show, Eq)
 
 data StructDecl 
-    = SDStructDecl SpecQualList StructDeclaratorList
+    = SDStructDecl
+        SpecQualList StructDeclaratorList
     deriving (Show, Eq)
 
 data SpecQualList 
-    = SQLTypeSpecSpecQualList TypeSpec (Maybe SpecQualList)
-    | SQLTypeQualSpecQualList TypeQual (Maybe SpecQualList)
+    = SQLTypeSpecSpecQualList
+        TypeSpec (Maybe SpecQualList)
+    | SQLTypeQualSpecQualList
+        TypeQual (Maybe SpecQualList)
     deriving (Show, Eq)
 
 data TypeQual 
@@ -129,31 +145,55 @@ data TypeQual
     deriving (Show, Eq)
 
 data StructDeclaratorList 
-    = SDLStructDeclarator StructDeclarator
-    | SDLStructDeclaratorStructDeclaratorList StructDeclarator StructDeclaratorList
+    = SDLStructDeclarator
+        StructDeclarator
+    | SDLStructDeclaratorStructDeclaratorList
+        StructDeclarator StructDeclaratorList
     deriving (Show, Eq)
 
 data StructDeclarator 
-    = SDDeclarator Declarator
-    | SDDeclaratorConstExpr (Maybe Declarator) ConstExpr
+    = SDDeclarator
+        Declarator
+    | SDDeclaratorConstExpr
+        (Maybe Declarator) ConstExpr
     deriving (Show, Eq)
 
 data Declarator 
-    = Declarator (Maybe Pointer) DirectDeclarator
+    = DDeclarator
+        (Maybe Pointer) DirectDeclarator
     deriving (Show, Eq)
 
 data Pointer 
-    = PTypeQualList (Maybe TypeQualList)
-    | PTypeQualListPointer (Maybe TypeQualList) Pointer
+    = PTypeQualList
+        (Maybe TypeQualList)
+    | PTypeQualListPointer
+        (Maybe TypeQualList) Pointer
     deriving (Show, Eq)
 
 data TypeQualList 
-    = TQLTypeQual TypeQual
-    | TQLTypeQualTypeQualList TypeQual TypeQualList
+    = TQLTypeQual
+        TypeQual
+    | TQLTypeQualTypeQualList
+        TypeQual TypeQualList
     deriving (Show, Eq)
 
 data DirectDeclarator 
-    = DoubleDeeTODO
+    = DDIdent
+        Ident
+    | DDDeclarator
+        Declarator
+    | DDDirectDeclaratorTypeQualListAssignmentExpr
+        DirectDeclarator (Maybe TypeQualList) (Maybe AssignmentExpr)
+    | DDDirectDeclaratorStaticTypeQualListAssignmentExpr
+        DirectDeclarator (Maybe TypeQualList) AssignmentExpr
+    | DDDirectDeclaratorTypeQualListStaticAssignmentExpr
+        DirectDeclarator TypeQualList AssignmentExpr
+    | DDDirectDeclaratorTypeQualList
+        DirectDeclarator (Maybe TypeQualList)
+    | DDDirectDeclaratorParamTypeList
+        DirectDeclarator ParamTypeList
+    | DDDirectDeclarator IdentList
+        DirectDeclarator (Maybe IdentList)
     deriving (Show, Eq)
 
 data AssignmentExpr 
