@@ -250,14 +250,22 @@ data AndExpr
 data EqualityExpr 
     = EERelationalExpr
         RelationalExpr
-    | EEEqualityExprEqualsRelationalExpr
-        EqualityExpr RelationalExpr
-    | EEEqualityExprNotEqualsRelationalExpr
-        EqualityExpr RelationalExpr
+    | EEEqualityExprEqualityOpShiftExpr
+        EqualityExpr EqualityOp ShiftExpr
+    deriving (Show, Eq)
+
+data EqualityOp  -- Not in the grammar, simplifies EqualityExpr def
+    = EOEquals
+    | EONotEquals
     deriving (Show, Eq)
 
 data RelationalExpr 
-    = RelativesTODO
+    = REShiftExpr
+        ShiftExpr
+    | RERelationalExprLessThanShiftExpr
+        RelationalExpr ShiftExpr
+    | RERelationalExprGreaterThanShiftExpr
+        RelationalExpr ShiftExpr
     deriving (Show, Eq)
 
 data ShiftExpr 
