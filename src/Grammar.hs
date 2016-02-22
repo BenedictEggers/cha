@@ -286,7 +286,15 @@ data ShiftDirection     -- Not in the grammar
     deriving (Show, Eq)
 
 data AdditiveExpr 
-    = AddMoarTODO
+    = AEMultiplicativeExpr
+        MultiplicativeExpr
+    | AEAdditiveExprAdditiveOpMultiplicativeExpr
+        AdditiveExpr AdditiveOp MultiplicativeExpr
+    deriving (Show, Eq)
+
+data AdditiveOp
+    = AOPlus
+    | AOMinus
     deriving (Show, Eq)
 
 data MultiplicativeExpr 
