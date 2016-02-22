@@ -49,6 +49,9 @@ module Grammar where
 import Data.Maybe    
 
 
+data Ident = String
+    deriving (Show, Eq)
+
 data TransUnit
     = TUExtDecl ExtDecl
     | TUTransUnitExtDecl TransUnit ExtDecl
