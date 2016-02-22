@@ -220,7 +220,10 @@ data LogOrExpr
     deriving (Show, Eq)
 
 data LogAndExpr 
-    = LogarithmToTODO
+    = LAEInclusiveOrExpr
+        InclusiveOrExpr
+    | LAELogAndExprInclusiveOrExpr
+        LogAndExpr InclusiveOrExpr
     deriving (Show, Eq)
 
 data InclusiveOrExpr 
