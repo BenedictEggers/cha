@@ -248,7 +248,12 @@ data AndExpr
     deriving (Show, Eq)
 
 data EqualityExpr 
-    = BlackLivesMatterTODO
+    = EERelationalExpr
+        RelationalExpr
+    | EEEqualityExprEqualsRelationalExpr
+        EqualityExpr RelationalExpr
+    | EEEqualityExprNotEqualsRelationalExpr
+        EqualityExpr RelationalExpr
     deriving (Show, Eq)
 
 data RelationalExpr 
