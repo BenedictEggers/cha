@@ -64,7 +64,10 @@ data FuncDef
     deriving (Show, Eq)
 
 data DeclSpecs
-    = DeclSpecsTODO
+    = DSStorageClassSpecDeclSpecs StorageClassSpec (Maybe DeclSpecs)
+    | DSTypeSpecifierDeclSpecs TypeSpec (Maybe DeclSpecs)
+    | DSTypeQualDeclSpecs TypeQual (Maybe DeclSpecs)
+    | DSFuncSpecDeclSpecs FuncSpec (Maybe DeclSpecs)
     deriving (Show, Eq)
 
 data StorageClassSpec
