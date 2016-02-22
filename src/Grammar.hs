@@ -143,7 +143,8 @@ data Declarator
     deriving (Show, Eq)
 
 data Pointer 
-    = PointTODO
+    = PTypeQualList (Maybe TypeQualList)
+    | PTypeQualListPointer (Maybe TypeQualList) Pointer
     deriving (Show, Eq)
 
 data TypeQualList 
