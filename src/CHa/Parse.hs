@@ -7,6 +7,7 @@ module CHa.Parse where
 
 
 import CHa.Types.Grammar
+import Text.Parsec
 
 
 parseFile :: String -> TransUnit
