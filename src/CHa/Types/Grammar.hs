@@ -43,6 +43,7 @@
 -          - Conditional   -> Cond
 -          - Initializer   -> Init
 -          - Enumeration   -> Enum
+-          - Assignment    -> Assign
 -              
 -}
 
@@ -375,7 +376,10 @@ data PrimaryExpr
     deriving (Show, Eq)
 
 data Expr 
-    = SomeBSTODO
+    = EAssignExpr
+        AssignExpr
+    | EExprAssignExpr
+        Expr AssignExpr
     deriving (Show, Eq)
 
 data ArgExprList 
