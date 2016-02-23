@@ -525,7 +525,8 @@ data CEnum
     deriving (Show, Eq)
 
 data TypedefName 
-    = TPEOUOTODO
+    = TNIdent
+        Ident
     deriving (Show, Eq)
 
 data FuncSpec 
