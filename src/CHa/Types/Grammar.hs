@@ -474,12 +474,12 @@ data Init
     deriving (Show, Eq)
 
 data UnaryOp 
-    = Ampersand
-    | Star
-    | Plus
-    | Minus
-    | Tilde
-    | Bang
+    = UOAmpersand
+    | UOStar
+    | UOPlus
+    | UOMinus
+    | UOTilde
+    | UOBang
     deriving (Show, Eq)
 
 data AssignOp 
