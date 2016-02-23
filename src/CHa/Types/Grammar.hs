@@ -483,17 +483,17 @@ data UnaryOp
     deriving (Show, Eq)
 
 data AssignOp 
-    = Equals
-    | TimesEquals
-    | DivideEquals
-    | ModEquals
-    | PlusEquals
-    | MinusEquals
-    | LeftShiftEquals
-    | RightShiftEquals
-    | BitAndEquals
-    | BitXorEquals
-    | BitOrEquals
+    = AOEquals
+    | AOTimesEquals
+    | AODivideEquals
+    | AOModEquals
+    | AOPlusEquals
+    | AOMinusEquals
+    | AOLeftShiftEquals
+    | AORightShiftEquals
+    | AOBitAndEquals
+    | AOBitXorEquals
+    | AOBitOrEquals
     deriving (Show, Eq)
 
 data IdentList 
