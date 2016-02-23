@@ -443,7 +443,8 @@ data InitList
     deriving (Show, Eq)
 
 data Designation 
-    = DeignTODO
+    = DDesignation
+        DesignatorList
     deriving (Show, Eq)
 
 data DesignatorList 
