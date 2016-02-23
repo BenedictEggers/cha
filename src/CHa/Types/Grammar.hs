@@ -497,7 +497,10 @@ data AssignOp
     deriving (Show, Eq)
 
 data IdentList 
-    = AnotherListTODO
+    = ILIdent
+        Ident
+    | ILIdentListIdent
+        IdentList Ident
     deriving (Show, Eq)
 
 data EnumSpec 
