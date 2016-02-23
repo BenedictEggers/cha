@@ -572,7 +572,10 @@ data BlockItemList
     deriving (Show, Eq)
 
 data BlockItem 
-    = SomeMoreTODO
+    = BIDecl
+        Decl
+    | BIStmt
+        Stmt
     deriving (Show, Eq)
 
 data Stmt 
