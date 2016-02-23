@@ -546,7 +546,10 @@ data Decl
     deriving (Show, Eq)
 
 data InitDeclList 
-    = BleghaoeuaTODO
+    = IDLInitDecl
+        InitDecl
+    | IDLInitDeclListInitDecl
+        InitDeclList InitDecl
     deriving (Show, Eq)
 
 data InitDecl 
