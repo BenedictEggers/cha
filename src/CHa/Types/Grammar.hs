@@ -311,7 +311,10 @@ data MultiplicativeOp
     deriving (Show, Eq)
 
 data CastExpr 
-    = TypeCastTODO
+    = CEUnaryExpr
+        UnaryExpr
+    | CETypeNameCastExpr
+        TypeName CastExpr
     deriving (Show, Eq)
 
 data UnaryExpr 
