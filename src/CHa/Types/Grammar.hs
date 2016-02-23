@@ -56,7 +56,7 @@ import Data.Maybe
 
 type Ident = String
 type StringLiteral = String
-type EnumConst = String
+type CEnumConst = String
 
 data Const
     = CInt
@@ -518,7 +518,10 @@ data CEnumList
     deriving (Show, Eq)
 
 data CEnum 
-    = EnumTODO
+    = CEEnumConst
+        CEnumConst
+    | CEEnumConstEqualsConstExpr
+        CEnumConst ConstExpr
     deriving (Show, Eq)
 
 data TypedefName 
