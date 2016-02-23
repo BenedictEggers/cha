@@ -618,7 +618,14 @@ data SelectionStmt
     deriving (Show, Eq)
 
 data IterStmt 
-    = DothingsmorethanonceTODO
+    = ISWhileExprStmt
+        Expr Stmt
+    | ISDoStmtWhileExpr
+        Stmt Expr
+    | ISForExprExprExprStmt
+        (Maybe Expr) (Maybe Expr) (Maybe Expr) Stmt
+    | ISForDeclExprExprStmt
+        Decl (Maybe Expr) (Maybe Expr) Stmt
     deriving (Show, Eq)
 
 data JumpStmt 
