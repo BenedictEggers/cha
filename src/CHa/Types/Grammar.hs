@@ -553,7 +553,10 @@ data InitDeclList
     deriving (Show, Eq)
 
 data InitDecl 
-    = SomeBSMoreTODO
+    = IDDecl
+        Decl
+    | IDDeclEqualsInit
+        Decl Init
     deriving (Show, Eq)
 
 data CompoundStmt 
