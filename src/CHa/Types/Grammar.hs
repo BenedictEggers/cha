@@ -402,7 +402,18 @@ data AbstractDeclarator
     deriving (Show, Eq)
 
 data DirectAbstractDeclarator 
-    = DirectAbstractTODO
+    = DADAbstractDeclarator
+        AbstractDeclarator
+    | DADDirectAbstractDeclaratorTypeQualListAssignExpr
+        (Maybe DirectAbstractDeclarator) (Maybe TypeQualList) (Maybe AssignExpr)
+    | DADDirectAbstractDeclaratorStaticTypeQualListAssignExpr
+        (Maybe DirectAbstractDeclarator) (Maybe TypeQualList) AssignExpr
+    | DADDirectAbstractDeclaratorTypeQualListStaticAssignExpr
+        (Maybe DirectAbstractDeclarator) TypeQualList AssignExpr
+    | DADDirectAbstractDeclaratorStar
+        (Maybe DirectAbstractDeclarator)
+    | DADDirectAbstractDeclaratorParamTypeList
+        (Maybe DirectAbstractDeclarator) (Maybe ParamTypeList)
     deriving (Show, Eq)
 
 data ParamTypeList 
