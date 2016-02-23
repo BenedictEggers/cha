@@ -11,7 +11,8 @@ C code, but we'll see.
 ## Goals/Roadmap
 
 ##### Primary Goals
-* [ ] Define Haskell datatypes to represent the C grammar
+
+* [x] Define Haskell datatypes to represent the C grammar
 * [ ] Parse source files into an AST
 * [ ] Build the symbol table
 * [ ] Typecheck
