@@ -448,7 +448,10 @@ data Designation
     deriving (Show, Eq)
 
 data DesignatorList 
-    = DesignatetheTODO
+    = DLDesignator
+        Designator
+    | DLDesignatorListDesignator
+        DesignatorList Designator
     deriving (Show, Eq)
 
 data Designator 
