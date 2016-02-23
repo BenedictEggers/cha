@@ -541,7 +541,8 @@ data DeclList
     deriving (Show, Eq)
 
 data Decl 
-    = DeclStuffTODO
+    = DDecl
+        DeclSpecs (Maybe InitDeclList)
     deriving (Show, Eq)
 
 data InitDeclList 
