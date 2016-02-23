@@ -595,7 +595,12 @@ data Stmt
     deriving (Show, Eq)
 
 data LabeledStmt 
-    = LabeledTODO
+    = LSIdentStmt
+        Ident Stmt
+    | LSCaseConstExprStmt
+        ConstExpr Stmt
+    | LSDefaultStmt
+        Stmt
     deriving (Show, Eq)
 
 data ExprStmt 
