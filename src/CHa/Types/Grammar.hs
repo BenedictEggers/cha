@@ -455,7 +455,10 @@ data DesignatorList
     deriving (Show, Eq)
 
 data Designator 
-    = DesignatorrrrrTODO
+    = DConstExpr
+        ConstExpr
+    | DDotIdent
+        Ident
     deriving (Show, Eq)
 
 data ConstExpr 
