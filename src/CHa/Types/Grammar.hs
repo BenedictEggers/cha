@@ -383,11 +383,15 @@ data Expr
     deriving (Show, Eq)
 
 data ArgExprList 
-    = ArgumentTODO
+    = AELAssignExpr
+        AssignExpr
+    | AELArgExprListAssignExpr
+        ArgExprList AssignExpr
     deriving (Show, Eq)
 
 data TypeName 
-    = TNTODO
+    = TNTypeName
+        SpecQualList (Maybe AbstractDeclarator)
     deriving (Show, Eq)
 
 data AbstractDeclarator 
