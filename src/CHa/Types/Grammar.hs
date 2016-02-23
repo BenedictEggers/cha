@@ -318,7 +318,18 @@ data CastExpr
     deriving (Show, Eq)
 
 data UnaryExpr 
-    = UNITARTHEONETRUEGODTODO
+    = UEPostfixExpr
+        PostfixExpr
+    | UEPlusPlusUnaryExpr
+        UnaryExpr
+    | UEMinusMinusUnaryExpr
+        UnaryExpr
+    | UEUnaryExprCastExpr
+        UnaryExpr CastExpr
+    | UESizeofUnaryExpr
+        UnaryExpr
+    | UESizeOfTypeName
+        TypeName
     deriving (Show, Eq)
 
 data PostfixExpr 
