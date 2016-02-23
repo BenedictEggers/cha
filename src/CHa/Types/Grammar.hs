@@ -609,7 +609,12 @@ data ExprStmt
     deriving (Show, Eq)
 
 data SelectionStmt 
-    = SelectiveTODOYo
+    = SSIfExprStmt
+        Expr Stmt
+    | SSIfExprStmtElseStmt
+        Expr Stmt Stmt
+    | SSSwitchExprStmt
+        Expr Stmt
     deriving (Show, Eq)
 
 data IterStmt 
