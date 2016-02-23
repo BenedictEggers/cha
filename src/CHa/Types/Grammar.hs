@@ -417,11 +417,15 @@ data DirectAbstractDeclarator
     deriving (Show, Eq)
 
 data ParamTypeList 
-    = PTLRTODO
+    = PTLParamList
+        ParamList Bool  -- Bool is whether there's a "..." at the end
     deriving (Show, Eq)
 
 data ParamList 
-    = ListyTODO
+    = PLParamDecl
+        ParamDecl
+    | PLParamListParamDecl
+        ParamList ParamDecl
     deriving (Show, Eq)
 
 data ParamDecl 
