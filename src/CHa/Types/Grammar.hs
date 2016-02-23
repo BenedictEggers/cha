@@ -45,7 +45,7 @@
 -}
 
 
-module Grammar where
+module CHa.Types.Grammar where
 
 
 import Data.Maybe    

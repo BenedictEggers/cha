@@ -1,6 +1,6 @@
 module Main where
 
-import Grammar
+import CHa.Types.Grammar
 
 main :: IO ()
 main = putStrLn "Hello"
