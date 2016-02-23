@@ -560,11 +560,15 @@ data InitDecl
     deriving (Show, Eq)
 
 data CompoundStmt 
-    = BlackBlocksTODO
+    = CSCompoundStmt
+        (Maybe BlockItemList)
     deriving (Show, Eq)
 
 data BlockItemList 
-    = BLTTODO
+    = BILBlockItem
+        BlockItem
+    | BILBlockItemListBlockItem
+        BlockItemList BlockItem
     deriving (Show, Eq)
 
 data BlockItem 
