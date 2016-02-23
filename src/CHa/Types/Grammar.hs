@@ -604,7 +604,8 @@ data LabeledStmt
     deriving (Show, Eq)
 
 data ExprStmt 
-    = ExpressiveTODO
+    = ESExprStmt
+        (Maybe ExprStmt)
     deriving (Show, Eq)
 
 data SelectionStmt 
