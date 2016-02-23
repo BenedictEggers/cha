@@ -18,10 +18,13 @@
 -      * Value constructors are prefixed with the capital letters of the type
 -        they construct, eg an ExtDecl value constructor in the TransUnit type
 -        will be called TUExtDecl.
--          (i)  In general, value constructors' names will indicate which fields
--               it expects. However,
--          (ii) If a type only has one value constructor, it will be named
--               the same thing as the type (but with a prefix as described above).
+-          (i)   In general, value constructors' names will indicate which fields
+-                they expect. However,
+-          (ii)  If a type only has one value constructor, it will be named
+-                the same thing as the type (but with a prefix as described above).
+-          (iii) If a value constructor has no parameters (ie is a fixed string
+-                in the grammar), it will just be named after the important
+-                bits of the string it is.
 -      * The following substitutions are made in all type names and value
 -        constructors:
 -          - Translation   -> Trans
