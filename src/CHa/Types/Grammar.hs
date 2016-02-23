@@ -429,7 +429,10 @@ data ParamList
     deriving (Show, Eq)
 
 data ParamDecl 
-    = ParamTODO
+    = PDDeclSpecsDeclarator
+        DeclSpecs Declarator
+    | PDDeclSpecsAbstractDeclarator
+        DeclSpecs AbstractDeclarator
     deriving (Show, Eq)
 
 data InitList 
