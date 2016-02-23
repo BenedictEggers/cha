@@ -530,7 +530,7 @@ data TypedefName
     deriving (Show, Eq)
 
 data FuncSpec 
-    = Inline
+    = FSInline
     deriving (Show, Eq)
 
 data DeclList 
