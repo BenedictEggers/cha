@@ -504,7 +504,10 @@ data IdentList
     deriving (Show, Eq)
 
 data EnumSpec 
-    = ENUMERRRRRRTODO
+    = ESIdentEnumList
+        (Maybe Ident) EnumList
+    | ESIdent
+        Ident
     deriving (Show, Eq)
 
 data EnumList 
