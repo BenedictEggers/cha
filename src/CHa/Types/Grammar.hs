@@ -42,6 +42,7 @@
 -          - Assignment    -> Assign
 -          - Conditional   -> Cond
 -          - Initializer   -> Init
+-          - Enumeration   -> Enum
 -              
 -}
 
@@ -52,7 +53,17 @@ module CHa.Types.Grammar where
 import Data.Maybe    
 
 
-data Ident = String
+type Ident = String
+type StringLiteral = String
+type EnumConst = String
+
+data Const
+    = CInt
+        Integer
+    | CFloat
+        Double
+    | CChar
+        Char
     deriving (Show, Eq)
 
 data TransUnit
@@ -353,7 +364,14 @@ data PostfixExpr
     deriving (Show, Eq)
 
 data PrimaryExpr 
-    = PrimesRCoolTODO
+    = PEIdent
+        Ident
+    | PEConst
+        Const
+    | PEStringLiteral
+        String
+    | PEExpr
+        Expr
     deriving (Show, Eq)
 
 data Expr 
