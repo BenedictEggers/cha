@@ -41,6 +41,7 @@
 -          - Statement     -> Stmt
 -          - Assignment    -> Assign
 -          - Conditional   -> Cond
+-          - Initializer   -> Init
 -              
 -}
 
@@ -333,7 +334,22 @@ data UnaryExpr
     deriving (Show, Eq)
 
 data PostfixExpr 
-    = PostalTODO
+    = PEPrimaryExpr
+        PrimaryExpr
+    | PEPostfixExpr Expr
+        PostfixExpr Expr
+    | PEPostfixExprArgExprList
+        PostfixExpr (Maybe ArgExprList)
+    | PEPostfixExprDotIdent
+        PostfixExpr Ident
+    | PEPostfixExprArrowIdent
+        PostfixExpr Ident
+    | PEPostfixExprPlusPlus
+        PostfixExpr
+    | PEPostfixExprMinusMinus
+        PostfixExpr
+    | PETypeNameInitList
+        TypeName InitList
     deriving (Show, Eq)
 
 data PrimaryExpr 
@@ -372,7 +388,7 @@ data ParamDecl
     = ParamTODO
     deriving (Show, Eq)
 
-data InitializerList 
+data InitList 
     = INITIALIZETHESEQUENCETODO
     deriving (Show, Eq)
 
@@ -392,7 +408,7 @@ data ConstExpr
     = ConstantineTODO
     deriving (Show, Eq)
 
-data Initializer 
+data Init 
     = InitYooTODO
     deriving (Show, Eq)
 
