@@ -467,7 +467,10 @@ data ConstExpr
     deriving (Show, Eq)
 
 data Init 
-    = InitYooTODO
+    = IAssignExpr
+        AssignExpr
+    | IInitList
+        InitList
     deriving (Show, Eq)
 
 data UnaryOp 
