@@ -395,7 +395,10 @@ data TypeName
     deriving (Show, Eq)
 
 data AbstractDeclarator 
-    = AbstractTODO
+    = ADPointer
+        Pointer
+    | ADPointerDirectAbstractDeclarator
+        (Maybe Pointer) DirectAbstractDeclarator
     deriving (Show, Eq)
 
 data DirectAbstractDeclarator 
