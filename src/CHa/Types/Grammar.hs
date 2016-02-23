@@ -629,5 +629,10 @@ data IterStmt
     deriving (Show, Eq)
 
 data JumpStmt 
-    = PeoplestillusetheseTODO
+    = JSGotoIdent
+        Ident
+    | JSContinue
+    | JSBreak
+    | JSReturnExpr
+        Expr
     deriving (Show, Eq)
