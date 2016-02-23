@@ -44,6 +44,7 @@
 -          - Conditional   -> Cond
 -          - Initializer   -> Init
 -          - Assignment    -> Assign
+-          - Iteration     -> Iter
 -              
 -}
 
@@ -579,7 +580,18 @@ data BlockItem
     deriving (Show, Eq)
 
 data Stmt 
-    = YoulikethatyoufuckerTODO
+    = SLabeledStmt
+        LabeledStmt
+    | SCompoundStmt
+        CompoundStmt
+    | SExprStmt
+        ExprStmt
+    | SSelectionStmt
+        SelectionStmt
+    | SIterStmt
+        IterStmt
+    | SJumpStmt
+        JumpStmt
     deriving (Show, Eq)
 
 data LabeledStmt 
@@ -594,7 +606,7 @@ data SelectionStmt
     = SelectiveTODOYo
     deriving (Show, Eq)
 
-data IterationStmt 
+data IterStmt 
     = DothingsmorethanonceTODO
     deriving (Show, Eq)
 
