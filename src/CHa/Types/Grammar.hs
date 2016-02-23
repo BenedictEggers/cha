@@ -436,7 +436,10 @@ data ParamDecl
     deriving (Show, Eq)
 
 data InitList 
-    = INITIALIZETHESEQUENCETODO
+    = ILDesignationInit
+        (Maybe Designation) Init
+    | IDInitListDesignationInit
+        InitList (Maybe Designation) Init
     deriving (Show, Eq)
 
 data Designation 
