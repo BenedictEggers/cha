@@ -38,11 +38,11 @@
 -          - Constant      -> Const
 -          - Identifier    -> Ident
 -          - Enumerator    -> Enum
+-          - Enumeration   -> Enum
 -          - Statement     -> Stmt
 -          - Assignment    -> Assign
 -          - Conditional   -> Cond
 -          - Initializer   -> Init
--          - Enumeration   -> Enum
 -          - Assignment    -> Assign
 -              
 -}
@@ -118,7 +118,7 @@ data TypeSpec
     | Bool
     | Complex
     | TSStructOrUnionSpec StructOrUnionSpec
-    | TSEnumSpec EnumSpec
+    | TSCEnumSpec CEnumSpec
     | TSTypedefName TypedefName
     deriving (Show, Eq)
 
@@ -503,18 +503,21 @@ data IdentList
         IdentList Ident
     deriving (Show, Eq)
 
-data EnumSpec 
-    = ESIdentEnumList
-        (Maybe Ident) EnumList
-    | ESIdent
+data CEnumSpec 
+    = CESIdentCEnumList
+        (Maybe Ident) CEnumList
+    | CESIdent
         Ident
     deriving (Show, Eq)
 
-data EnumList 
-    = BleghTODO
+data CEnumList 
+    = CELEnum
+        CEnum
+    | CELEnumListCEnum
+        CEnumList CEnum
     deriving (Show, Eq)
 
-data Enum 
+data CEnum 
     = EnumTODO
     deriving (Show, Eq)
 
