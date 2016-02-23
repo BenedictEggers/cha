@@ -462,7 +462,8 @@ data Designator
     deriving (Show, Eq)
 
 data ConstExpr 
-    = ConstantineTODO
+    = CECondExpr
+        CondExpr
     deriving (Show, Eq)
 
 data Init 
