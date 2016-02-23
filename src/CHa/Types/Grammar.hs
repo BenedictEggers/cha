@@ -292,13 +292,22 @@ data AdditiveExpr
         AdditiveExpr AdditiveOp MultiplicativeExpr
     deriving (Show, Eq)
 
-data AdditiveOp
+data AdditiveOp         -- Not in the grammar
     = AOPlus
     | AOMinus
     deriving (Show, Eq)
 
 data MultiplicativeExpr 
-    = TimesMultiplyTODO
+    = MECastExpr
+        CastExpr
+    | MEMultiplicativeExprMultiplicativeOpCastExpr
+        MultiplicativeExpr MultiplicativeOp CastExpr
+    deriving (Show, Eq)
+
+data MultiplicativeOp
+    = MOTimes
+    | MODivide
+    | MOMod
     deriving (Show, Eq)
 
 data CastExpr 
