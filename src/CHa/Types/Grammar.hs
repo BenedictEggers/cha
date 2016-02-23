@@ -534,7 +534,10 @@ data FuncSpec
     deriving (Show, Eq)
 
 data DeclList 
-    = OTHESUTODO
+    = DLDecl
+        Decl
+    | DLDeclListDecl
+        DeclList Decl
     deriving (Show, Eq)
 
 data Decl 
